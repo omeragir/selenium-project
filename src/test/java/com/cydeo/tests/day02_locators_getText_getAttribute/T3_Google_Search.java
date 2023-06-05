@@ -24,6 +24,16 @@ public class T3_Google_Search {
         Thread.sleep(3000);
         //enter ""apple" key,and press enter    //Press enter to search
         search.sendKeys("apple" + Keys.ENTER);
+
+        String expectedInBeginningTitle="apple";
+        String actualTitle=driver.getTitle();
+
+        if (actualTitle.startsWith(expectedInBeginningTitle)){
+            System.out.println("Title verification Passed!!");
+
+        }else {
+            System.out.println("Title verification Fail!!");
+        }
     }
 
 }
