@@ -33,7 +33,6 @@ public class T2_LinkText_Practice {
         }
 
         driver.navigate().back();
-
         expectedTitle="Practice";
         actualTitle=driver.getTitle();
 
