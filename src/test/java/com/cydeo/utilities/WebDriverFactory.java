@@ -15,14 +15,14 @@ public class WebDriverFactory {
     //  -if"firefox" passed -->it will open firefox browser
     //RETURN TYPE:"WebDriver
 
-    public static WebDriver getDriver(String browserType){
-        if (browserType.equalsIgnoreCase("chrome")){
+    public static WebDriver getDriver(String browserType) {
+        if (browserType.equalsIgnoreCase("chrome")) {
             WebDriverManager.chromedriver().setup();
             return new ChromeDriver();
         } else if (browserType.equalsIgnoreCase("firefox")) {
             WebDriverManager.firefoxdriver().setup();
-           return new FirefoxDriver();
-        }else {
+            return new FirefoxDriver();
+        } else {
             System.out.println("Given String does not represent any browser");
             System.out.println("Either that browser does not exist or not currently supported.");
             System.out.println("driver=null");
