@@ -17,21 +17,21 @@ public class T3_Google_Search {
         driver.get("https:www.google.com");
         //cookies passed
         Thread.sleep(3000);
-        driver.findElement(By.cssSelector("[id='L2AGLb']")).click();
-
+        // driver.findElement(By.cssSelector("[id='L2AGLb']")).click();
+        driver.findElement(By.id("W0wltc")).click();
         //locate search box
         WebElement search = driver.findElement(By.name("q"));
         Thread.sleep(3000);
         //enter ""apple" key,and press enter    //Press enter to search
         search.sendKeys("apple" + Keys.ENTER);
 
-        String expectedInBeginningTitle="apple";
-        String actualTitle=driver.getTitle();
+        String expectedInBeginningTitle = "apple";
+        String actualTitle = driver.getTitle();
 
-        if (actualTitle.startsWith(expectedInBeginningTitle)){
+        if (actualTitle.startsWith(expectedInBeginningTitle)) {
             System.out.println("Title verification Passed!!");
 
-        }else {
+        } else {
             System.out.println("Title verification Fail!!");
         }
     }
