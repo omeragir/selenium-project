@@ -32,6 +32,12 @@ USE XPATH LOCATOR FOR ALL WEBELEMENT LOCATORS
 
         System.out.println("hockeyButton.isDisplayed(),expecting true = " + hockeyButton.isDisplayed());
 
+        if (hockeyButton.isSelected()){
+            System.out.println("Button is selected.Verification PASSED!");
+        }else {
+            System.out.println("Button is not selected.Verification Failed!");
+        }
+
         Thread.sleep(3000);
         driver.quit();
 
