@@ -45,8 +45,9 @@ public class RegistrationFormFilling {
         phoneNumberBox.sendKeys("123-456-7890");
 
         // 9. Click to "Male" from Gender
-        WebElement genderBox = driver.findElement(By.xpath("//input[@name='gender']"));
+        WebElement genderBox = driver.findElement(By.xpath("//input[@value='male']"));
         genderBox.click();
+        System.out.println(genderBox.isSelected());
 
         // 10. Enter Date of birth "01/28/1990"
         WebElement birthDayBox = driver.findElement(By.xpath("//input[@name='birthday']"));
@@ -85,6 +86,7 @@ public class RegistrationFormFilling {
             System.out.println("expectedText = " + expectedText);
         }
 
+        driver.quit();
 
     }
 }
