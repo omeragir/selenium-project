@@ -52,7 +52,7 @@ public class T5_dropdown_intro {
         String actualDefaultValue = select.getFirstSelectedOption().getText();
 
         //Do our assertion
-        Assert.assertEquals(actualDefaultValue, expectedDefaultValue);
+        Assert.assertEquals(actualDefaultValue, expectedDefaultValue,"Verification Failed!!");//We can write hear message
         Assert.assertTrue(actualDefaultValue.equals(expectedDefaultValue));
 
         // 4. Verify “State selection” default selected value is correct
