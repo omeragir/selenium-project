@@ -32,7 +32,7 @@ public class T5_window_handle_practice {
 
 
     @Test
-    public void multiple_window_test() {
+    public void multiple_window_test() throws InterruptedException {
 
         //4. Assert: Title is “Windows”
         String expectedTitle = "Windows";
@@ -70,6 +70,7 @@ public class T5_window_handle_practice {
         // we can use mainHandle to switch
 
         driver.switchTo().window(mainHandle);
+
 
         //code
 
