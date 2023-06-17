@@ -41,11 +41,13 @@ public class Driver {
                 driver=new ChromeDriver();
                 driver.manage().window().maximize();
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                break;
             case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver=new FirefoxDriver();
                 driver.manage().window().maximize();
                 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+                break;
 
         }
 
