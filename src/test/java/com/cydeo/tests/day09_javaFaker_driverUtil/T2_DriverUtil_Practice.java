@@ -27,18 +27,18 @@ public class T2_DriverUtil_Practice {
 
  */
 
-@Test
+    @Test
     public void bingSearch_test() {
 
 
         //2- Go to: https://bing.com
         //    Driver.getDriver()-->will return me the "driver"
         //instead of writing "driver " from now on,we will write     Driver.getDriver()
-      Driver.getDriver().get(ConfigurationReader.getProperty("bingURL"));
+        Driver.getDriver().get(ConfigurationReader.getProperty("bingURL"));
         WebElement cookies = Driver.getDriver().findElement(By.xpath("//button[@id='bnp_btn_reject']"));
         cookies.click();
 
-        WebElement searchBox =Driver.getDriver().findElement(By.xpath("//textarea[@id='sb_form_q']"));
+        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//textarea[@id='sb_form_q']"));
 
         //3- Write “apple” in search box
         searchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
@@ -46,12 +46,41 @@ public class T2_DriverUtil_Practice {
         //4- Verify title:
         String expectedTitle = ConfigurationReader.getProperty("searchValue") + " - Suchen";
         BrowserUtils.sleep(2);
-        String actualTitle =Driver.getDriver().getTitle();
+        String actualTitle = Driver.getDriver().getTitle();
         Assert.assertEquals(actualTitle, expectedTitle);
     }
+
+    @Test
+    public void bingSearch_test2() {
+
+
+        //2- Go to: https://bing.com
+        //    Driver.getDriver()-->will return me the "driver"
+        //instead of writing "driver " from now on,we will write     Driver.getDriver()
+        Driver.getDriver().get(ConfigurationReader.getProperty("bingURL"));
+        WebElement cookies = Driver.getDriver().findElement(By.xpath("//button[@id='bnp_btn_reject']"));
+        cookies.click();
+
+        WebElement searchBox = Driver.getDriver().findElement(By.xpath("//textarea[@id='sb_form_q']"));
+
+        //3- Write “apple” in search box
+        searchBox.sendKeys(ConfigurationReader.getProperty("searchValue") + Keys.ENTER);
+
+        //4- Verify title:
+        String expectedTitle = ConfigurationReader.getProperty("searchValue") + " - Suchen";
+        BrowserUtils.sleep(2);
+        String actualTitle = Driver.getDriver().getTitle();
+        Assert.assertEquals(actualTitle, expectedTitle);
+    }
+
     @AfterMethod
-  public void rearDown(){
-  Driver.getDriver().quit();
+    public void tearDown() {
+        //We won`t be using the selenium`s quit method directly anymore
+        //Driver.getDriver().quit();--> no more using this method
+        //We will use Driver.closeDriver();
+
+        Driver.closeDriver();
+
     }
 
 }
