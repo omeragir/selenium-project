@@ -16,6 +16,8 @@ public class Guru99_Upload_Test {
         // TC: Guru99 Upload Test
         //1. Go to  “https://demo.guru99.com/test/upload”
         Driver.getDriver().get("https://demo.guru99.com/test/upload");
+
+        //Cookies-iframe
         Driver.getDriver().switchTo().frame(Driver.getDriver().findElement(By.xpath("//*[@id='gdpr-consent-notice']")));
         WebElement acceptAll = Driver.getDriver().findElement(By.xpath("//button[@id='save']"));
         acceptAll.click();
