@@ -22,6 +22,9 @@ public class Guru99_Upload_Test {
 
         // back to the main html/frame
         Driver.getDriver().switchTo().defaultContent();
+        /*
+          WebElement acceptAllButton = privacyBanner.findElement(By.cssSelector("a[id='cookie_action_close_header'][data-cookie-set='acceptAll']")).click();
+         */
 
         /*
          //Find some small file from your computer, and get the path of it.
