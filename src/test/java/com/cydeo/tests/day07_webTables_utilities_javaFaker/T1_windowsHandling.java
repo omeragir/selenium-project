@@ -76,7 +76,7 @@ public class T1_windowsHandling {
         ((JavascriptExecutor) driver).executeScript("window.open('https://etsy.com','_blank');");
         ((JavascriptExecutor) driver).executeScript("window.open('https://facebook.com','_blank');");
 
-        BrowserUtils.switchWindowAndVerifyTitle(driver,"etsy","Etsy Deutschland – Kaufe Handgefertigtes, Vintage-Sachen, Spezialanfertigungen und einzigartige Geschenke für alle ein.");
+        BrowserUtils.switchWindowAndVerify(driver,"etsy","Etsy Deutschland – Kaufe Handgefertigtes, Vintage-Sachen, Spezialanfertigungen und einzigartige Geschenke für alle ein.");
 
     }
 }
