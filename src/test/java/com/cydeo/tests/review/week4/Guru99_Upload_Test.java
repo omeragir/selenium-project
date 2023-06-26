@@ -11,7 +11,7 @@ public class Guru99_Upload_Test {
 
 
     @Test
-    public void guru99_upload_test(){
+    public void guru99_upload_test() {
 
         // TC: Guru99 Upload Test
         //1. Go to  “https://demo.guru99.com/test/upload”
@@ -56,7 +56,7 @@ public class Guru99_Upload_Test {
 
         BrowserUtils.sleep(3);
 
-        Assert.assertEquals(actualMsg,expectedMsg,"Result Message verification failed!");
+        Assert.assertEquals(actualMsg, expectedMsg, "Result Message verification failed!");
 
         Driver.closeDriver();
 
