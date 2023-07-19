@@ -13,7 +13,7 @@ Feature: Vehicles Models Page web table functionality
   Scenario Outline: Column names for the store managers
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
-    And user hovers over Fleet tab and click Vehicles Model module
+    And user hovers over "Fleet" tab and click "Vehicles Model" module
     Then user is navigated Vehicles Model page
     Then should see below a total of ten columns
 

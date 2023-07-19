@@ -6,6 +6,7 @@ import com.vytrack.pages.VehiclesModelPage;
 import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -23,7 +24,7 @@ public class US05_StepDefs extends BasePage {
 
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
-    VehiclesModelPage US05 = new VehiclesModelPage();
+    VehiclesModelPage vehiclesModelPage = new VehiclesModelPage();
 
 
     /*
@@ -39,15 +40,20 @@ public class US05_StepDefs extends BasePage {
 
     }*/
 
+    @And("user hovers over {string} tab and click {string} module")
+    public void userHoversOverTabAndClickModule(String tab, String module) {
 
-    @Given("user hovers over Fleet tab and click Vehicles Model module")
+        navigateToModule(tab, module);
+    }
+
+   /* @Given("user hovers over Fleet tab and click Vehicles Model module")
     public void user_hovers_over_fleet_tab_and_click_vehicles_model_module() {
         BrowserUtilities.waitFor(5);
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(US05.fleetTab).perform();
-        US05.vehiclesModel.click();
+        actions.moveToElement(vehiclesModelPage.fleetTab).perform();
+        vehiclesModelPage.vehiclesModel.click();
 
-    }
+    }*/
 
 
     @Then("user is navigated Vehicles Model page")
@@ -66,7 +72,7 @@ public class US05_StepDefs extends BasePage {
     @Then("should see below a total of ten columns")
     public void should_see_below_a_total_of_ten_columns(List<String> expectedMenu) {
 
-        List<String> actualMenu = BrowserUtilities.getElementsText(US05.menuNames);
+        List<String> actualMenu = BrowserUtilities.getElementsText(vehiclesModelPage.menuNames);
         Assert.assertEquals(expectedMenu, actualMenu);
 
     }
@@ -79,13 +85,13 @@ public class US05_StepDefs extends BasePage {
 
     }
 
-    /*@When("driver hovers over Fleet module and click Vehicles Model menu")
+    /*
+    @When("driver hovers over Fleet module and click Vehicles Model menu")
     public void driver_hovers_over_fleet_module_and_click_vehicles_model_menu() {
         BrowserUtilities.waitFor(10);
         Actions actions = new Actions(Driver.getDriver());
         actions.moveToElement(US05.driverFleetTab).perform();
         US05.driverVehiclesModel.click();
-
 
     }*/
 
@@ -93,7 +99,7 @@ public class US05_StepDefs extends BasePage {
     public void user_should_see_the_error_message(String string) {
         BrowserUtilities.waitFor(5);
         String expectedErrorMessage = "You do not have permission to perform this action.";
-        String actualMessage = US05.messageElement.getText();
+        String actualMessage = vehiclesModelPage.messageElement.getText();
         Assert.assertEquals(expectedErrorMessage, actualMessage);
 
 
@@ -104,6 +110,7 @@ public class US05_StepDefs extends BasePage {
 
         navigateToModule(tab, module);
     }
+
 
 
 }
