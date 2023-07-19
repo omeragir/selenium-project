@@ -12,26 +12,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Us08StepDefs extends BasePage {
+public class US08_StepDefs extends BasePage {
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
-
-    @Given("user is on the dashboard page")
-    public void user_is_on_the_dashboard_page() {
-
-        String expectedTitle = "Dashboard";
-        wait.until(ExpectedConditions.titleIs(expectedTitle));
-        String actualTitle = Driver.getDriver().getTitle();
-
-        Assert.assertEquals(expectedTitle, actualTitle);
-
-    }
 
     @When("user clicks on the {string} tab and then selects {string} module")
     public void user_clicks_on_the_tab_and_then_selects_module(String tab, String module) {
@@ -64,7 +52,7 @@ public class Us08StepDefs extends BasePage {
     @Then("user clicks on the Repeat checkbox")
     public void user_clicks_on_the_repeat_checkbox() {
 
-        WebElement element= calendarEventsPage.repeatButton;
+        WebElement element = calendarEventsPage.repeatButton;
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
 
@@ -84,18 +72,13 @@ public class Us08StepDefs extends BasePage {
 
 
     }
+
     @Then("user sees the error message {string}")
     public void user_sees_the_error_message(String expectedMessage) {
-       WebElement errorMessage=Driver.getDriver().findElement(By.xpath("//span[.='This value should not be blank.']//span/span"));
-       String actualMessage=errorMessage.getText();
-       Assert.assertEquals(expectedMessage,actualMessage);
+        WebElement errorMessage = Driver.getDriver().findElement(By.xpath("//span[.='This value should not be blank.']//span/span"));
+        String actualMessage = errorMessage.getText();
+        Assert.assertEquals(expectedMessage, actualMessage);
     }
-
-
-
-
-
-
 
 
 }
