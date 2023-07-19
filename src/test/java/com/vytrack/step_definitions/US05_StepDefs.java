@@ -27,19 +27,6 @@ public class US05_StepDefs extends BasePage {
     VehiclesModelPage vehiclesModelPage = new VehiclesModelPage();
 
 
-    /*
-    @Given("user is on the dashboard page")
-    public void user_is_on_the_dashboard_page() {
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(15));
-        wait.until(ExpectedConditions.titleIs("Dashboard"));
-
-        String expectedTitle = "Dashboard";
-        String actualTitle = Driver.getDriver().getTitle();
-
-        Assert.assertEquals("Title verification failed!", expectedTitle, actualTitle);
-
-    }*/
-
     @And("user hovers over {string} tab and click {string} module")
     public void userHoversOverTabAndClickModule(String tab, String module) {
 
@@ -110,7 +97,6 @@ public class US05_StepDefs extends BasePage {
 
         navigateToModule(tab, module);
     }
-
 
 
 }
