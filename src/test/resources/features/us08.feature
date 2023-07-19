@@ -12,6 +12,8 @@ Feature: Repeat checkbox verification
     Then user is on the Create Calendar event page
     And user clicks on the Repeat checkbox
     Then user sees the number "1" selected by default
+    When user deletes "1"
+    Then user sees the error message "This value should not be blank."
 
     Examples:
       | userType      |

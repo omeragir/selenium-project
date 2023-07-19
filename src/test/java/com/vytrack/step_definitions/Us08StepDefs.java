@@ -77,4 +77,25 @@ public class Us08StepDefs extends BasePage {
     }
 
 
+    @When("user deletes {string}")
+    public void user_deletes(String num1) {
+        WebElement repeatEveryBox = Driver.getDriver().findElement(By.ByXPath.xpath("(//input[@class='recurrence-subview-control__number'])[1]"));
+        repeatEveryBox.clear();
+
+
+    }
+    @Then("user sees the error message {string}")
+    public void user_sees_the_error_message(String expectedMessage) {
+       WebElement errorMessage=Driver.getDriver().findElement(By.xpath("//span[.='This value should not be blank.']//span/span"));
+       String actualMessage=errorMessage.getText();
+       Assert.assertEquals(expectedMessage,actualMessage);
+    }
+
+
+
+
+
+
+
+
 }
