@@ -21,12 +21,12 @@ public class VehiclesModelPage {
 
 
     //VehiclesModelPage for truck drivers
-    @FindBy(css = "#flash-messages > div > div > div > div")
+    @FindBy(css = "#flash-messages > div > div > div:nth-child(2) > div")
     public WebElement messageElement;
 
 
     //DashboardPage
-    @FindBy(css = "#main-menu > ul > li:nth-child(2) > a > span")
+    @FindBy(xpath = "(//div[@class='message'])[2]")
     public WebElement fleetTab;
 
     @FindBy(css = "#main-menu > ul > li:nth-child(1) > a")
@@ -35,7 +35,7 @@ public class VehiclesModelPage {
     @FindBy(xpath = "//*[@id=\"main-menu\"]/ul/li[2]/div/div/ul/li[9]/a/span")
     public WebElement vehiclesModel;
 
-    @FindBy(xpath = "//span[@class='title title-level-2']")
+    @FindBy(xpath = "//span[contains(@class, 'title title-level-2') and contains(text(), 'Vehicles Model')]")
     public WebElement driverVehiclesModel;
 
 

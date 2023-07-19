@@ -39,5 +39,5 @@ Feature: Vehicles Models Page web table functionality
   Scenario: An error message verification for drivers on the Vehicle Model page
     Given user is logged as a truck driver
     And user is on the dashboard page
-    When driver hovers over Fleet module and click Vehicles Model menu
+    When driver hovers over "Fleet" module and click "Vehicles Model" menu
     Then user should see the error message "You do not have permission to perform this action."

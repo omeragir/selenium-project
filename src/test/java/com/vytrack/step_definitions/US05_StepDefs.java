@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.BasePage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.pages.VehiclesModelPage;
 import com.vytrack.utilities.BrowserUtilities;
@@ -18,7 +19,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class US05_StepDefs {
+public class US05_StepDefs extends BasePage {
 
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
@@ -78,7 +79,7 @@ public class US05_StepDefs {
 
     }
 
-    @When("driver hovers over Fleet module and click Vehicles Model menu")
+    /*@When("driver hovers over Fleet module and click Vehicles Model menu")
     public void driver_hovers_over_fleet_module_and_click_vehicles_model_menu() {
         BrowserUtilities.waitFor(10);
         Actions actions = new Actions(Driver.getDriver());
@@ -86,16 +87,22 @@ public class US05_StepDefs {
         US05.driverVehiclesModel.click();
 
 
-    }
+    }*/
 
     @Then("user should see the error message {string}")
     public void user_should_see_the_error_message(String string) {
         BrowserUtilities.waitFor(5);
-        String expectedErrorMessage = "You d not have permission to perform this action.";
+        String expectedErrorMessage = "You do not have permission to perform this action.";
         String actualMessage = US05.messageElement.getText();
         Assert.assertEquals(expectedErrorMessage, actualMessage);
 
 
+    }
+
+    @When("driver hovers over {string} module and click {string} menu")
+    public void driverHoversOverAndClickMenu(String tab, String module) {
+
+        navigateToModule(tab, module);
     }
 
 
