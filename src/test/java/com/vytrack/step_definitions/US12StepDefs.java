@@ -6,27 +6,26 @@ import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
-import com.vytrack.pages.BasePage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class AccountsStepDefinitions extends BasePage {
-    LoginPage loginPage = new LoginPage();
+public class US12StepDefs extends BasePage {
     AccountPage accountPage = new AccountPage();
 
 
     @Given("The user is on the DashboardPage")
     public void the_user_is_on_the_dashboard_page() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
-        loginPage.login(ConfigurationReader.getProperty("sales_manager_username"), ConfigurationReader.getProperty("sales_manager_password"));
+        BrowserUtilities.waitForTitleContains("Dashboard");
+        BrowserUtilities.verifyTitle("Dashboard");
     }
 
     @When("User hovers mouse over {string} tab and click {string} module")
