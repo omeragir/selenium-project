@@ -1,6 +1,3 @@
-@B29G1-265
-
-
 Feature: Vehicles Models Page web table functionality
 
   Agile story:  AC1: As a user, I want to view columns on the Vehicle models page. (web-table)
@@ -9,7 +6,7 @@ Feature: Vehicles Models Page web table functionality
   AC2: Drivers should not able to access the Vehicle Model page, users should see “You do not have permission to perform this action.”
 
 
-  @AC1
+  @B29G1-310  @B29G1-281
   Scenario Outline: Column names for the store managers
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
@@ -35,7 +32,7 @@ Feature: Vehicles Models Page web table functionality
       | store manager |
 
 
-  @AC2
+  @B29G1-311  @B29G1-283
   Scenario: An error message verification for drivers on the Vehicle Model page
     Given user is logged as a truck driver
     And user is on the dashboard page

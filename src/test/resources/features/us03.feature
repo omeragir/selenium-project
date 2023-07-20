@@ -1,10 +1,10 @@
-@wip-US03
+@B29G1-304
 Feature: Pin bar functionality
   User Story:
   As a user, I want to learn how to use the pin bar
   User types are: driver, sales manager, store manager
 
-
+  @B29G1-277
   Scenario Outline: Verify that users click the "Learn how to use this space" link
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
@@ -19,7 +19,7 @@ Feature: Pin bar functionality
       | store manager |
 
 
-
+  @B29G1-295
   Scenario Outline:
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
