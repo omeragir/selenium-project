@@ -53,6 +53,7 @@ public class US03StepDefs {
     @Then("user should see an image on the page.")
     public void userShouldSeeAnImageOnThePage() {
 
+        BrowserUtilities.waitForVisibility(pinbarPage.pinBarImage,10);
         Assert.assertTrue(pinbarPage.pinBarImage.isDisplayed());
 
     }
