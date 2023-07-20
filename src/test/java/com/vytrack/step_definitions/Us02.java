@@ -21,7 +21,7 @@ public class Us02 {
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     @Given("user on the dashboard page")
-    public void userIsOnTheDashboardPage() {
+    public void userOnTheDashboardPage() {
 
         String expectedTitle = "Dashboard";
         wait.until(ExpectedConditions.titleIs(expectedTitle));
