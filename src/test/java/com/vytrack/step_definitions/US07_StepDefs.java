@@ -17,8 +17,8 @@ public class US07_StepDefs extends BasePage {
     VYTrackPage vyTrackPage = new VYTrackPage();
     List<WebElement> checkboxes = vyTrackPage.carsCheckboxes;
 
-    @Given("user is on the dashboard page")
-    public void user_is_on_the_dashboard_page() {
+    @Given("the user is on the dashboard page")
+    public void theUserIsOnTheDashboardPage() {
         waitUntilLoaderScreenDisappear();
     }
 
@@ -68,4 +68,6 @@ public class US07_StepDefs extends BasePage {
     public void a_random_car_should_be_checked() {
 
     }
+
+
 }
