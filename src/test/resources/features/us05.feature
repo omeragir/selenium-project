@@ -1,4 +1,4 @@
-Feature: Vehicles Models Page web table functionality
+Feature: Vehicles Models Page web table Column Visibility
 
   Agile story:  AC1: As a user, I want to view columns on the Vehicle models page. (web-table)
   Expected Column names:
