@@ -9,15 +9,14 @@ Feature: Default
 		  When user hovers over the Activities module
 		  And user  clicks on the Calendar Events button.
 		  And user clicks on the Create Calendar Event button.
-		  And user  enter a "<message>"  in the Description field
+		  And user  enter "Scrum daily message" text  in the Description field
 		  Then the event with the description should be created successfully
 
 		Examples:
-			| userType      | message             |
-			| driver        | Scrum daily meeting |
-			| sales manager | Refinement meeting  |
-			| store manager | Demo  meeting       |
-
+			| userType      |
+			| driver        |
+			| sales manager |
+			| store manager |
 
 
 
