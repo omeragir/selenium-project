@@ -1,7 +1,8 @@
 @B29G1-304
-Feature: Pin bar functionality
+Feature: Learn how to use the Pinbar
   User Story:
-  As a user, I want to learn how to use the pin bar
+  As a user, I want to learn how to use the Pinbar
+  So that I create fast access links for my favorite pages
   User types are: driver, sales manager, store manager
 
   @B29G1-277
@@ -20,7 +21,7 @@ Feature: Pin bar functionality
 
 
   @B29G1-295
-  Scenario Outline:
+  Scenario Outline: Verify user sees an image on the page
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
     When user clicks Learn how to use this space link
