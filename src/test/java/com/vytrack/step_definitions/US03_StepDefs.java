@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US03StepDefs {
+public class US03_StepDefs {
 
 
     PinbarPage pinbarPage = new PinbarPage();
