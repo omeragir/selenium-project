@@ -59,16 +59,18 @@ public class CarSelectStepDefs extends BasePage {
         }
     }
 
+    WebElement randomCheckbox;
+
     @When("user checks one of the cars randomly")
     public void user_checks_one_of_the_cars_randomly() {
-        WebElement randomCheckbox = checkboxes.get(new Random().nextInt(checkboxes.size()));
+        randomCheckbox = checkboxes.get(new Random().nextInt(checkboxes.size()));
         randomCheckbox.click();
-        Assert.assertTrue(randomCheckbox.isSelected());
+
     }
 
     @Then("a random car should be checked")
     public void a_random_car_should_be_checked() {
-
+        Assert.assertTrue(randomCheckbox.isSelected());
     }
 
 
