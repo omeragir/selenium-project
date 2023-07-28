@@ -2,8 +2,9 @@
 Feature: As a user, I want to filter customers’ info on the Account page
 
   Scenario Outline: Users should see 8 filter items on the Accounts page
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
-    Given The user is on the DashboardPage
+    Given user is on the dashboard page
     When User hovers mouse over "Customers" tab and click "Accounts" module
     And User go to the "All - Accounts - Customers"
     Then User should be able to see  below eight filter items on the Accounts page

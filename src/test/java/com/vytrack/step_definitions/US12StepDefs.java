@@ -21,13 +21,6 @@ import java.util.List;
 public class US12StepDefs extends BasePage {
     AccountPage accountPage = new AccountPage();
 
-
-    @Given("The user is on the DashboardPage")
-    public void the_user_is_on_the_dashboard_page() {
-        BrowserUtilities.waitForTitleContains("Dashboard");
-        BrowserUtilities.verifyTitle("Dashboard");
-    }
-
     @When("User hovers mouse over {string} tab and click {string} module")
     public void user_hovers_mouse_over_module_and_click_on_the_submenu(String tab, String module) {
         navigateToModule(tab, module);

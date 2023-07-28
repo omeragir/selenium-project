@@ -11,8 +11,6 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -67,7 +65,6 @@ public class US05_StepDefs extends BasePage {
 
     @Given("user is logged as a truck driver")
     public void user_is_logged_as_a_truck_driver() {
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
         loginPage.login(ConfigurationReader.getProperty("driver_username"), ConfigurationReader.getProperty("driver_password"));
 
     }
