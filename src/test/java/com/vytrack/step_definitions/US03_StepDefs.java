@@ -2,6 +2,7 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.PinbarPage;
 import com.vytrack.utilities.BrowserUtilities;
+import com.vytrack.utilities.ConfigurationReader;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -54,7 +55,12 @@ public class US03_StepDefs {
     public void userShouldSeeAnImageOnThePage() {
 
         BrowserUtilities.waitForVisibility(pinbarPage.pinBarImage,10);
-        Assert.assertTrue(pinbarPage.pinBarImage.isDisplayed());
+
+        String appUrl = ConfigurationReader.getProperty("url");
+        String actualImgSrc = pinbarPage.pinBarImage.getAttribute("src");
+        String expectedImgSrc= appUrl  +"/bundles/oronavigation/images/pinbar-location.jpg";
+
+        Assert.assertEquals("Image source verification failed", expectedImgSrc, actualImgSrc);
 
     }
 
