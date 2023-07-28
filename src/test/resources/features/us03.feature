@@ -7,6 +7,7 @@ Feature: Learn how to use the Pinbar
 
   @B29G1-277
   Scenario Outline: Verify that users click the "Learn how to use this space" link
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
     When user clicks Learn how to use this space link
@@ -22,6 +23,7 @@ Feature: Learn how to use the Pinbar
 
   @B29G1-295
   Scenario Outline: Verify user sees an image on the page
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
     When user clicks Learn how to use this space link

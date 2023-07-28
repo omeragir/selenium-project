@@ -20,18 +20,6 @@ public class Us02 {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
-    @Given("user on the dashboard page")
-    public void userOnTheDashboardPage() {
-
-        String expectedTitle = "Dashboard";
-        wait.until(ExpectedConditions.titleIs(expectedTitle));
-        String actualTitle = Driver.getDriver().getTitle();
-
-        Assert.assertEquals(expectedTitle, actualTitle);
-    }
-
-
-
     @When("user click the question icon")
     public void user_click_the_question_icon() {
         BrowserUtilities.sleep(2);

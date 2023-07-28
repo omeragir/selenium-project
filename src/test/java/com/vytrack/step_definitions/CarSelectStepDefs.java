@@ -12,14 +12,16 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
-public class US07_StepDefs extends BasePage {
+public class CarSelectStepDefs extends BasePage {
 
     VYTrackPage vyTrackPage = new VYTrackPage();
     List<WebElement> checkboxes = vyTrackPage.carsCheckboxes;
 
     @Given("the user is on the dashboard page")
     public void theUserIsOnTheDashboardPage() {
-        waitUntilLoaderScreenDisappear();
+        BrowserUtilities.waitForTitleContains("Dashboard");
+        BrowserUtilities.verifyTitle("Dashboard");
+
     }
 
     @When("user hovers over Fleet module and clicks Vehicles menu")

@@ -8,6 +8,7 @@ Feature: Vehicles Models Page web table Column Visibility
 
   @B29G1-310  @B29G1-281
   Scenario Outline: Column names for the store managers
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
     And user hovers over "Fleet" tab and click "Vehicles Model" module
@@ -34,6 +35,7 @@ Feature: Vehicles Models Page web table Column Visibility
 
   @B29G1-311  @B29G1-283
   Scenario: An error message verification for drivers on the Vehicle Model page
+    Given the user is on the "login" page
     Given user is logged as a truck driver
     And user is on the dashboard page
     When driver hovers over "Fleet" module and click "Vehicles Model" menu

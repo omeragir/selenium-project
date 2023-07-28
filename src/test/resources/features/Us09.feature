@@ -8,6 +8,7 @@ Feature:Users see error messages
 
 
   Scenario Outline: Verify error message
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
     When  user hovers over Activities module and clicks Calendar Events menu
     Then  user is on the Calendar Events page and clicks Create Calendar Event button.
@@ -23,6 +24,7 @@ Feature:Users see error messages
 
 
   Scenario Outline: Verify error message
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
     When  user hovers over Activities module and clicks Calendar Events menu
     Then  user is on the Calendar Events page and clicks Create Calendar Event button.

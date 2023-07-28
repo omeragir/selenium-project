@@ -1,5 +1,6 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.BasePage;
 import com.vytrack.pages.PinbarPage;
 import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.ConfigurationReader;
@@ -9,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US03_StepDefs {
+public class US03_StepDefs extends BasePage {
 
 
     PinbarPage pinbarPage = new PinbarPage();
@@ -18,7 +19,7 @@ public class US03_StepDefs {
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {
 
-        BrowserUtilities.waitForTitleContains("Dashboard");
+        waitUntilLoaderScreenDisappear();
         BrowserUtilities.verifyTitle("Dashboard");
 
     }
@@ -54,11 +55,11 @@ public class US03_StepDefs {
     @Then("user should see an image on the page.")
     public void userShouldSeeAnImageOnThePage() {
 
-        BrowserUtilities.waitForVisibility(pinbarPage.pinBarImage,10);
+        BrowserUtilities.waitForVisibility(pinbarPage.pinBarImage, 10);
 
         String appUrl = ConfigurationReader.getProperty("url");
         String actualImgSrc = pinbarPage.pinBarImage.getAttribute("src");
-        String expectedImgSrc= appUrl  +"/bundles/oronavigation/images/pinbar-location.jpg";
+        String expectedImgSrc = appUrl + "/bundles/oronavigation/images/pinbar-location.jpg";
 
         Assert.assertEquals("Image source verification failed", expectedImgSrc, actualImgSrc);
 

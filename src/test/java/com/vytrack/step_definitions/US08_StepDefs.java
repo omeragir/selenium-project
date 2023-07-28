@@ -4,7 +4,6 @@ import com.vytrack.pages.BasePage;
 import com.vytrack.pages.CalendarEventsPage;
 import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
