@@ -12,7 +12,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
-public class US07_StepDefs extends BasePage {
+public class CarSelectStepDefs extends BasePage {
 
     VYTrackPage vyTrackPage = new VYTrackPage();
     List<WebElement> checkboxes = vyTrackPage.carsCheckboxes;
