@@ -19,7 +19,9 @@ public class US07_StepDefs extends BasePage {
 
     @Given("the user is on the dashboard page")
     public void theUserIsOnTheDashboardPage() {
-        waitUntilLoaderScreenDisappear();
+        BrowserUtilities.waitForTitleContains("Dashboard");
+        BrowserUtilities.verifyTitle("Dashboard");
+
     }
 
     @When("user hovers over Fleet module and clicks Vehicles menu")

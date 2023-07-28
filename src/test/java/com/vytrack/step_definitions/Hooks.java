@@ -1,7 +1,6 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.utilities.BrowserUtilities;
-import com.vytrack.utilities.ConfigurationReader;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Scenario;
@@ -16,9 +15,8 @@ public class Hooks {
     @Before(order = 1)
     public void setupMethod() {
 
-        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
     }
 
     //@Before (value = "@login", order = 2 )

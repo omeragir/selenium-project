@@ -5,6 +5,7 @@ Feature: Repeat checkbox verification
 
   @B29G1-284
   Scenario Outline: US268-TC01-Verify users  see the number“1” by default in the Repeat Every input
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
     Given user is on the dashboard page
     When  user clicks on the "Activities" tab and then selects "Calendar Events" module

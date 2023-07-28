@@ -6,8 +6,9 @@ Feature: Access to the Oronic Documentation page
 
   @B29G1-296
   Scenario Outline: Accessing Oronic Documentation Page
+    Given the user is on the "login" page
     Given the user logged in as "<userType>"
-    Given user on the dashboard page
+    Given user is on the dashboard page
     When user click the question icon
     And user switch to the new window
     And user on the Oronic Documentation page

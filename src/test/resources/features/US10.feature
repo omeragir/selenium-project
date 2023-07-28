@@ -1,22 +1,24 @@
 @B29G1-301
-Feature: Default
+Feature: Description Field Functionality
+  User Story:As a user, I want to write the “Description” when I create a calendar event. (Iframe)
 
-	
-	@B29G1-289
-	Scenario Outline: US270-TC01-Verify users write messages in the Description ** field on the calendar event page.
-		  Given the user logged in as "<userType>"
-		  Given user is on the dashboard page
-		  When user hovers over the Activities module
-		  And user  clicks on the Calendar Events button.
-		  And user clicks on the Create Calendar Event button.
-		  And user  enter "Scrum daily message" text  in the Description field
-		  Then the event with the description should be created successfully
 
-		Examples:
-			| userType      |
-			| driver        |
-			| sales manager |
-			| store manager |
+  @B29G1-289
+  Scenario Outline: US270-TC01-Verify users write messages in the Description ** field on the calendar event page.
+    Given the user is on the "login" page
+    Given the user logged in as "<userType>"
+    Given user is on the dashboard page
+    When user hovers over the Activities module
+    And user  clicks on the Calendar Events button.
+    And user clicks on the Create Calendar Event button.
+    And user  enter "Scrum daily message" text  in the Description field
+    Then the event with the description should be created successfully
+
+    Examples:
+      | userType      |
+      | driver        |
+      | sales manager |
+      | store manager |
 
 
 

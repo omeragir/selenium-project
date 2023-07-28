@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/vytrack/step_definitions",
         dryRun = false,// [true] it checks if all snippets are implemented.
-        tags = "", // @admin or @student or @regression
+        tags = "@B29G1-290", // @admin or @student or @regression
         publish = true
 )
 public class CukesRunner {
