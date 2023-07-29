@@ -1,18 +1,17 @@
 package com.vytrack.step_definitions;
-
 import com.vytrack.pages.BasePage;
-import com.vytrack.pages.VYTrackPage;
+import com.vytrack.pages.ErrorAlertPage;
 import com.vytrack.utilities.BrowserUtilities;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.junit.Assert;
 
 
-public class US04_StepDefs extends BasePage {
+
+public class VehicleContracts_StepDefs extends BasePage {
 
 
-    VYTrackPage vyTrackPage = new VYTrackPage();
+    ErrorAlertPage errorAlertPage = new ErrorAlertPage();
 
     @When("user hovers over {string} module and clicks on the {string} menu")
     public void user_hovers_over_fleet_module_and_clicks_on_the_vehicle_contracts_menu(String tab, String module) {
@@ -35,11 +34,11 @@ public class US04_StepDefs extends BasePage {
     }
 
 
-    @And("user should click error message")
-    public void userShouldClickErrorMessage() {
+    @And("user should click error messages")
+    public void userShouldClickErrorMessages() {
 
-        BrowserUtilities.waitForClickablility(vyTrackPage.applicationAlertMessage, 1);
-        vyTrackPage.applicationAlertMessage.click();
+        errorAlertPage.applicationAlertMessage();
+
 
     }
 
@@ -47,8 +46,7 @@ public class US04_StepDefs extends BasePage {
     @Then("user should see an error message saying {string}")
     public void userShouldSeeAnErrorMessageSaying(String expectedErrorMessage) {
 
-        String actualMessage = vyTrackPage.permissionAlertMessage.getText();
-        Assert.assertEquals(expectedErrorMessage, actualMessage);
+        errorAlertPage.permissionAlertMessage(expectedErrorMessage);
 
     }
 

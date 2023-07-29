@@ -13,12 +13,6 @@ public class VYTrackPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-  
-    @FindBy(xpath = "(//button[@class='close'])[1]")
-    public WebElement applicationAlertMessage;
-
-    @FindBy(xpath = "//div[@class='message']")
-    public WebElement permissionAlertMessage;
 
     @FindBy(xpath = "//span[@class='title title-level-2']")
     public List<WebElement> vehiclesMenuOptions;

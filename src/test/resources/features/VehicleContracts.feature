@@ -23,8 +23,7 @@ Feature:User should be able to access Vehicle Contracts Page
   Scenario: Verify that user attempts to access Vehicle contracts page
     Given the user is on the "login" page
     Given the user logged in with username as "User1" and password as "UserUser123"
-    Given user is on the dashboard page
-    And user should click error message
+    And user should click error messages
     When  user hovers over "Fleet" module and clicks on the "Vehicle Contracts" menu
     Then user should see an error message saying "You do not have permission to perform this action."
 
