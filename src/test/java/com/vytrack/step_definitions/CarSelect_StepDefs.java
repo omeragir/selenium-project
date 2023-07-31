@@ -3,7 +3,6 @@ package com.vytrack.step_definitions;
 import com.vytrack.pages.BasePage;
 import com.vytrack.pages.VYTrackPage;
 import com.vytrack.utilities.BrowserUtilities;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -12,17 +11,10 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
-public class CarSelectStepDefs extends BasePage {
+public class CarSelect_StepDefs extends BasePage {
 
     VYTrackPage vyTrackPage = new VYTrackPage();
     List<WebElement> checkboxes = vyTrackPage.carsCheckboxes;
-
-    @Given("the user is on the dashboard page")
-    public void theUserIsOnTheDashboardPage() {
-        BrowserUtilities.waitForTitleContains("Dashboard");
-        BrowserUtilities.verifyTitle("Dashboard");
-
-    }
 
     @When("user hovers over Fleet module and clicks Vehicles menu")
     public void user_hovers_over_fleet_module_and_clicks_vehicles_menu() {

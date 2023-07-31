@@ -2,23 +2,18 @@ package com.vytrack.step_definitions;
 
 import com.vytrack.pages.AccountPage;
 import com.vytrack.pages.BasePage;
-import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtilities;
-import com.vytrack.utilities.ConfigurationReader;
-import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class US12StepDefs extends BasePage {
+public class FilterCustomerInfoAccountP_StepDefs extends BasePage {
     AccountPage accountPage = new AccountPage();
 
     @When("User hovers mouse over {string} tab and click {string} module")

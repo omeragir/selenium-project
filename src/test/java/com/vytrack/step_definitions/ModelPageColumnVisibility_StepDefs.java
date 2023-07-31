@@ -18,7 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class US05_StepDefs extends BasePage {
+public class ModelPageColumnVisibility_StepDefs extends BasePage {
 
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
@@ -30,16 +30,6 @@ public class US05_StepDefs extends BasePage {
 
         navigateToModule(tab, module);
     }
-
-   /* @Given("user hovers over Fleet tab and click Vehicles Model module")
-    public void user_hovers_over_fleet_tab_and_click_vehicles_model_module() {
-        BrowserUtilities.waitFor(5);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(vehiclesModelPage.fleetTab).perform();
-        vehiclesModelPage.vehiclesModel.click();
-
-    }*/
-
 
     @Then("user is navigated Vehicles Model page")
     public void user_is_navigated_vehicles_model_page() {
@@ -69,15 +59,6 @@ public class US05_StepDefs extends BasePage {
 
     }
 
-    /*
-    @When("driver hovers over Fleet module and click Vehicles Model menu")
-    public void driver_hovers_over_fleet_module_and_click_vehicles_model_menu() {
-        BrowserUtilities.waitFor(10);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(US05.driverFleetTab).perform();
-        US05.driverVehiclesModel.click();
-
-    }*/
 
     @Then("user should see the error message {string}")
     public void user_should_see_the_error_message(String string) {

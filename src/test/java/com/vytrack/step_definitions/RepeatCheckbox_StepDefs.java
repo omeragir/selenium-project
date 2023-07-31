@@ -15,7 +15,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class US08_StepDefs extends BasePage {
+public class RepeatCheckbox_StepDefs extends BasePage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
     CalendarEventsPage calendarEventsPage = new CalendarEventsPage();

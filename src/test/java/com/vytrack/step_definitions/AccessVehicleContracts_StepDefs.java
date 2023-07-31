@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 
 
 
-public class VehicleContracts_StepDefs extends BasePage {
+public class AccessVehicleContracts_StepDefs extends BasePage {
 
 
     ErrorAlertPage errorAlertPage = new ErrorAlertPage();
