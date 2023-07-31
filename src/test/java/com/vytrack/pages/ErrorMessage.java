@@ -8,11 +8,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class Us09Page {
+public class ErrorMessage {
 
     public WebDriverWait wait;
 
-    public Us09Page() {
+    public ErrorMessage() {
         wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
         PageFactory.initElements(Driver.getDriver(), this);
     }

@@ -1,6 +1,6 @@
 Feature: Vehicles Models Page web table Column Visibility
 
-  Agile story:  AC1: As a user, I want to view columns on the Vehicle models page. (web-table)
+  User story:  AC1: As a user, I want to view columns on the Vehicle models page. (web-table)
   Expected Column names:
   MODEL NAME, MAKE, CAN BE REQUESTED, CVVI, CO2 FEE (/MONTH), COST (DEPRECIATED), TOTAL COST (DEPRECIATED), CO2 EMISSIONS, FUEL TYPE, VENDORS
   AC2: Drivers should not able to access the Vehicle Model page, users should see “You do not have permission to perform this action.”

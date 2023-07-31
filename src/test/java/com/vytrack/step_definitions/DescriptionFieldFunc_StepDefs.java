@@ -1,9 +1,8 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.BasePage;
-import com.vytrack.pages.US10Page;
+import com.vytrack.pages.CreateCalenderPage;
 import com.vytrack.utilities.Driver;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -16,29 +15,29 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class US10StepDefs extends BasePage {
+public class DescriptionFieldFunc_StepDefs extends BasePage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
-    US10Page us10Page = new US10Page();
+    CreateCalenderPage createCalenderPage = new CreateCalenderPage();
 
 
     @When("user hovers over the Activities module")
     public void user_hovers_over_the_activities_module() {
         Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(us10Page.activities).perform();
+        actions.moveToElement(createCalenderPage.activities).perform();
     }
 
     @When("user  clicks on the Calendar Events button.")
     public void user_clicks_on_the_calendar_events_button() {
 
        // wait.until(ExpectedConditions.visibilityOf(us10Page.calendarEvent));
-        us10Page.calendarEvent.click();
+        createCalenderPage.calendarEvent.click();
     }
 
     @When("user clicks on the Create Calendar Event button.")
     public void user_clicks_on_the_create_calendar_event_button() {
         wait.until(ExpectedConditions.titleContains("Calendar Events - Activities"));
-        us10Page.createCalendarEvent.sendKeys(Keys.ENTER);
+        createCalenderPage.createCalendarEvent.sendKeys(Keys.ENTER);
     }
 
     @When("user  enter \"Scrum daily message\" text  in the Description field")

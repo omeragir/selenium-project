@@ -10,7 +10,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US03_StepDefs extends BasePage {
+public class PinbarUsage_StepDefs extends BasePage {
 
 
     PinbarPage pinbarPage = new PinbarPage();

@@ -1,5 +1,6 @@
 @accountsPage
-Feature: As a user, I want to filter customers’ info on the Account page
+Feature: Filter Customer Info on Account Page
+ User Story: As a user, I want to filter customers’ info on the Account page
 
   Scenario Outline: Users should see 8 filter items on the Accounts page
     Given the user is on the "login" page
