@@ -1,6 +1,5 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.pages.ErrorMessage;
 import com.vytrack.utilities.BrowserUtilities;
@@ -8,12 +7,10 @@ import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 
-public class ErrorMessageVisibility_StepDefs extends BasePage {
+public class ErrorMessageVisibility_StepDefs extends ErrorMessage {
     LoginPage loginPage = new LoginPage();
     ErrorMessage errorMessage = new ErrorMessage();
 
@@ -33,9 +30,8 @@ public class ErrorMessageVisibility_StepDefs extends BasePage {
 
     @Then("user click Repeat checkbox icon")
     public void user_click_repeat_checkbox_icon() {
-        WebElement element = Driver.getDriver().findElement(By.xpath("//input[@data-name='recurrence-repeat']"));
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
-        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", element);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", repeatCheckBox);
+        ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].click();", repeatCheckBox);
     }
 
     @Then("user enters less than one in Repeat Every part")

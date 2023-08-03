@@ -1,6 +1,5 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
 import com.vytrack.pages.VYTrackPage;
 import com.vytrack.utilities.BrowserUtilities;
 import io.cucumber.java.en.Then;
@@ -11,7 +10,7 @@ import org.openqa.selenium.WebElement;
 import java.util.List;
 import java.util.Random;
 
-public class CarSelect_StepDefs extends BasePage {
+public class CarSelect_StepDefs extends VYTrackPage {
 
     VYTrackPage vyTrackPage = new VYTrackPage();
     List<WebElement> checkboxes = vyTrackPage.carsCheckboxes;
@@ -64,6 +63,5 @@ public class CarSelect_StepDefs extends BasePage {
     public void a_random_car_should_be_checked() {
         Assert.assertTrue(randomCheckbox.isSelected());
     }
-
 
 }
