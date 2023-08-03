@@ -1,5 +1,11 @@
 @B29G1-300
-Feature: Default
+Feature: As a user, I want to view car odometer info on the Vehicles Odometers page.
+
+  AC1: Store and Sales managers should see the dedicated error message.
+  AC2: Drivers should see the default page as 1.
+  AC3: Divers should see the View Per Page is 25 by default.
+
+  User types are: driver, sales manager, store manager
 
 
   @B29G1-297
