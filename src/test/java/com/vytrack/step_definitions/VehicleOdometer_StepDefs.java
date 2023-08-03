@@ -5,7 +5,6 @@ import com.vytrack.pages.VYTrackPage;
 import com.vytrack.utilities.BrowserUtilities;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -13,17 +12,6 @@ public class VehicleOdometer_StepDefs {
 
     public VehicleOdometerPage VehicleOdometerPage = new VehicleOdometerPage();
     public VYTrackPage VYTrackPage = new VYTrackPage();
-
-    @Given("the user is on the dashboard page")
-    public void theUserIsOnTheDashboardPage() {
-        VehicleOdometerPage.waitUntilLoaderScreenDisappear();
-        // BrowserUtilities.waitFor(5);
-
-        if (VehicleOdometerPage.isWarningMessageDisplayed()) {
-            VehicleOdometerPage.closeWarningMessage();
-            // BrowserUtilities.waitFor(5);
-        }
-    }
 
     @When("the user hovers over the Fleet module and clicks Vehicles Odometer")
     public void theUserHoversOverTheFleetModuleAndClicksVehiclesOdometer() {
