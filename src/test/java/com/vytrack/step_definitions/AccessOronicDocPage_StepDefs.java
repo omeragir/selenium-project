@@ -1,29 +1,24 @@
 package com.vytrack.step_definitions;
 
+import com.vytrack.pages.VYTrackPage;
 import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.Driver;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 import java.util.Set;
 
-public class Us02 {
+public class AccessOronicDocPage_StepDefs extends VYTrackPage {
 
     WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
 
     @When("user click the question icon")
     public void user_click_the_question_icon() {
         BrowserUtilities.sleep(2);
-        WebElement questionIcon = Driver.getDriver().findElement(By.xpath("//a[@target='_blank']"));
         questionIcon.click();
     }
 
@@ -35,10 +30,9 @@ public class Us02 {
         Set<String> windowHandles = Driver.getDriver().getWindowHandles();
         for (String handle : windowHandles) {
 
-                Driver.getDriver().switchTo().window(handle);
-            }
+            Driver.getDriver().switchTo().window(handle);
         }
-
+    }
 
 
     @And("user on the Oronic Documentation page")
@@ -49,7 +43,7 @@ public class Us02 {
         String currentUrl = Driver.getDriver().getCurrentUrl();
         String expectedUrl = "https://doc.oroinc.com/";
 
-        Assert.assertEquals(currentUrl,expectedUrl);
+        Assert.assertEquals(currentUrl, expectedUrl);
     }
 
 

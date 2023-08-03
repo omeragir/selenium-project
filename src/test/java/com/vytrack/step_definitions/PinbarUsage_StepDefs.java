@@ -1,6 +1,5 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
 import com.vytrack.pages.PinbarPage;
 import com.vytrack.utilities.BrowserUtilities;
 import com.vytrack.utilities.ConfigurationReader;
@@ -10,11 +9,9 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US03_StepDefs extends BasePage {
-
+public class PinbarUsage_StepDefs extends PinbarPage {
 
     PinbarPage pinbarPage = new PinbarPage();
-
 
     @Given("user is on the dashboard page")
     public void user_is_on_the_dashboard_page() {

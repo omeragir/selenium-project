@@ -1,6 +1,5 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.pages.VehiclesModelPage;
 import com.vytrack.utilities.BrowserUtilities;
@@ -18,28 +17,17 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class US05_StepDefs extends BasePage {
+public class ModelPageColumnVisibility_StepDefs extends VehiclesModelPage {
 
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
     VehiclesModelPage vehiclesModelPage = new VehiclesModelPage();
-
 
     @And("user hovers over {string} tab and click {string} module")
     public void userHoversOverTabAndClickModule(String tab, String module) {
 
         navigateToModule(tab, module);
     }
-
-   /* @Given("user hovers over Fleet tab and click Vehicles Model module")
-    public void user_hovers_over_fleet_tab_and_click_vehicles_model_module() {
-        BrowserUtilities.waitFor(5);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(vehiclesModelPage.fleetTab).perform();
-        vehiclesModelPage.vehiclesModel.click();
-
-    }*/
-
 
     @Then("user is navigated Vehicles Model page")
     public void user_is_navigated_vehicles_model_page() {
@@ -53,7 +41,6 @@ public class US05_StepDefs extends BasePage {
 
     }
 
-
     @Then("should see below a total of ten columns")
     public void should_see_below_a_total_of_ten_columns(List<String> expectedMenu) {
 
@@ -62,22 +49,11 @@ public class US05_StepDefs extends BasePage {
 
     }
 
-
     @Given("user is logged as a truck driver")
     public void user_is_logged_as_a_truck_driver() {
         loginPage.login(ConfigurationReader.getProperty("driver_username"), ConfigurationReader.getProperty("driver_password"));
 
     }
-
-    /*
-    @When("driver hovers over Fleet module and click Vehicles Model menu")
-    public void driver_hovers_over_fleet_module_and_click_vehicles_model_menu() {
-        BrowserUtilities.waitFor(10);
-        Actions actions = new Actions(Driver.getDriver());
-        actions.moveToElement(US05.driverFleetTab).perform();
-        US05.driverVehiclesModel.click();
-
-    }*/
 
     @Then("user should see the error message {string}")
     public void user_should_see_the_error_message(String string) {
@@ -86,7 +62,6 @@ public class US05_StepDefs extends BasePage {
         String actualMessage = vehiclesModelPage.messageElement.getText();
         Assert.assertEquals(expectedErrorMessage, actualMessage);
 
-
     }
 
     @When("driver hovers over {string} module and click {string} menu")
@@ -94,6 +69,5 @@ public class US05_StepDefs extends BasePage {
 
         navigateToModule(tab, module);
     }
-
 
 }

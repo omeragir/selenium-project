@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class VYTrackPage {
+public class VYTrackPage extends BasePage {
 
     public VYTrackPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -22,4 +22,8 @@ public class VYTrackPage {
 
     @FindBy(xpath = "//button[@class='btn btn-default btn-small dropdown-toggle']/input")
     public WebElement selectAllCars;
+
+    @FindBy(xpath = "//a[@target='_blank']")
+    public WebElement questionIcon;
+
 }

@@ -5,9 +5,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class PinbarPage {
+public class PinbarPage extends BasePage {
 
-    public PinbarPage(){
+    public PinbarPage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
@@ -23,7 +23,5 @@ public class PinbarPage {
 
     @FindBy(xpath = "//img[@src='/bundles/oronavigation/images/pinbar-location.jpg']")
     public WebElement pinBarImage;
-
-
 
 }

@@ -4,16 +4,10 @@ import com.vytrack.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.time.Duration;
+public class ErrorMessage extends BasePage {
 
-public class Us09Page {
-
-    public WebDriverWait wait;
-
-    public Us09Page() {
-        wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(10));
+    public ErrorMessage() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
