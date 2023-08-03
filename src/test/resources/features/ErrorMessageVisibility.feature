@@ -1,4 +1,4 @@
-@smoke
+
 Feature:Users see error messages
 
   User Story:
