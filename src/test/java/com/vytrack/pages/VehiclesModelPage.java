@@ -1,6 +1,5 @@
 package com.vytrack.pages;
 
-
 import com.vytrack.utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
 
-public class VehiclesModelPage {
+public class VehiclesModelPage extends BasePage {
 
     public VehiclesModelPage() {
         PageFactory.initElements(Driver.getDriver(), this);
@@ -23,9 +22,5 @@ public class VehiclesModelPage {
     //VehiclesModelPage for truck drivers
     @FindBy(css = "#flash-messages > div > div > div:nth-child(2) > div")
     public WebElement messageElement;
-
-
-
-
 
 }

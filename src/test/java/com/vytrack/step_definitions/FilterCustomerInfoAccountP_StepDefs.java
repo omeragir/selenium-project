@@ -1,7 +1,6 @@
 package com.vytrack.step_definitions;
 
 import com.vytrack.pages.AccountPage;
-import com.vytrack.pages.BasePage;
 import com.vytrack.utilities.BrowserUtilities;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
@@ -13,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class FilterCustomerInfoAccountP_StepDefs extends BasePage {
+public class FilterCustomerInfoAccountP_StepDefs extends AccountPage {
     AccountPage accountPage = new AccountPage();
 
     @When("User hovers mouse over {string} tab and click {string} module")

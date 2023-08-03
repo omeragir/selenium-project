@@ -1,6 +1,5 @@
 package com.vytrack.step_definitions;
 
-import com.vytrack.pages.BasePage;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.pages.VehiclesModelPage;
 import com.vytrack.utilities.BrowserUtilities;
@@ -18,12 +17,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import java.util.List;
 
-public class ModelPageColumnVisibility_StepDefs extends BasePage {
+public class ModelPageColumnVisibility_StepDefs extends VehiclesModelPage {
 
     LoginPage loginPage = new LoginPage();
     Actions actions = new Actions(Driver.getDriver());
     VehiclesModelPage vehiclesModelPage = new VehiclesModelPage();
-
 
     @And("user hovers over {string} tab and click {string} module")
     public void userHoversOverTabAndClickModule(String tab, String module) {
@@ -43,7 +41,6 @@ public class ModelPageColumnVisibility_StepDefs extends BasePage {
 
     }
 
-
     @Then("should see below a total of ten columns")
     public void should_see_below_a_total_of_ten_columns(List<String> expectedMenu) {
 
@@ -52,13 +49,11 @@ public class ModelPageColumnVisibility_StepDefs extends BasePage {
 
     }
 
-
     @Given("user is logged as a truck driver")
     public void user_is_logged_as_a_truck_driver() {
         loginPage.login(ConfigurationReader.getProperty("driver_username"), ConfigurationReader.getProperty("driver_password"));
 
     }
-
 
     @Then("user should see the error message {string}")
     public void user_should_see_the_error_message(String string) {
@@ -67,7 +62,6 @@ public class ModelPageColumnVisibility_StepDefs extends BasePage {
         String actualMessage = vehiclesModelPage.messageElement.getText();
         Assert.assertEquals(expectedErrorMessage, actualMessage);
 
-
     }
 
     @When("driver hovers over {string} module and click {string} menu")
@@ -75,6 +69,5 @@ public class ModelPageColumnVisibility_StepDefs extends BasePage {
 
         navigateToModule(tab, module);
     }
-
 
 }
